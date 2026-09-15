@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050b12">
+  <meta name="description" content="Home Lab Village — build, interact, observe, attack, analyze, and learn together.">
+  <title>Home Lab Village</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#home" aria-label="Home Lab Village home">
+    <span class="logo"><span class="house">⌂</span><span class="flask">⚗</span></span>
+    <span>Home Lab Village</span>
+  </a>
+  <button class="menu" aria-label="Toggle menu">☰</button>
+  <nav>
+    <a class="active" href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#workshop">Workshop</a>
+    <a href="#ctf">CTF</a>
+    <a href="#resources">Resources</a>
+    <a href="#community">Community</a>
+  </nav>
+  <a class="btn small discord" href="#community">Join Discord</a>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">BUILD • EXPERIMENT • LEARN • TOGETHER</div>
+    <h1>Home Lab <span>Village</span></h1>
+    <h2>A community for curious minds.</h2>
+    <p>Whether you're setting up your first Raspberry Pi, running a full Proxmox cluster, or just getting started with a terminal, Home Lab Village is a place to learn, share projects, collaborate, and grow together.</p>
+    <div class="actions">
+      <a class="btn primary" href="#community">☁ Join the Community →</a>
+      <a class="btn outline" href="#ctf">⚑ Try the CTF →</a>
+    </div>
+  </div>
+  <div class="lab-scene" aria-label="Stylized homelab terminal">
+    <div class="glow"></div>
+    <div class="monitor">
+      <div class="terminal">
+        <span>$ whoami</span><br>
+        <b>home_labber</b><br><br>
+        <i>&gt; build</i><br>
+        <i>&gt; experiment</i><br>
+        <i>&gt; break</i><br>
+        <i>&gt; learn</i><br>
+        <i>&gt; repeat <em>█</em></i>
+      </div>
+      <div class="mark">⌂<strong>⚗</strong></div>
+    </div>
+    <div class="rack"><i></i><i></i><i></i></div>
+    <div class="poster">Good<br>Labs.<br>Better<br>People.</div>
+  </div>
+</section>
+
+<section class="flow" id="about">
+  <article><div>◇</div><h3>Build</h3><p>Set up your own lab and learn the basics.</p></article>
+  <article><div>⌘</div><h3>Interact</h3><p>Explore real services and configurations.</p></article>
+  <article><div>⌕</div><h3>Observe</h3><p>Look at traffic, logs, and what's happening under the hood.</p></article>
+  <article><div class="pink">⚔</div><h3>Attack</h3><p>Safely generate traffic and try different techniques.</p></article>
+  <article><div>▥</div><h3>Analyze</h3><p>Make sense of the data and turn it into knowledge.</p></article>
+</section>
+
+<section class="cards">
+  <article class="card ctf" id="ctf">
+    <div class="kicker pink-text">CTF CHALLENGE</div>
+    <h2>Think you can find the flag?</h2>
+    <p>Check out our beginner-friendly CTF. Use your OSINT, forensics, and problem-solving skills to see if you can complete the challenge.</p>
+    <a class="btn pink-btn" href="https://liljuicetin.org/ctf">Go to CTF →</a>
+    <div class="flag">⚑</div>
+    <code>hlv{....}</code>
+  </article>
+  <article class="card event" id="workshop">
+    <div class="kicker">UPCOMING EVENT</div>
+    <h2>SFISSA Hack the Flag 2026</h2>
+    <h3>Chili Cookoff</h3>
+    <p class="date">▣ &nbsp; September 18–19, 2026</p>
+    <p>Home Lab Village will be making our debut at SFISSA's Hack the Flag Chili Cookoff! Stop by our table, say hello, and learn more about the community.</p>
+    <a class="btn event-btn" href="#community">Event Details →</a>
+  </article>
+</section>
+
+<section class="lower">
+  <article class="card welcome" id="community">
+    <h2>♟ &nbsp; All Skill Levels Welcome</h2>
+    <p>The homelab rabbit hole can be scary for those unfamiliar with it. That's why Home Lab Village exists — to make it less intimidating. Ask questions, share what you're working on, get feedback, and learn with a supportive community.</p>
+    <div class="pills"><span>Beginners</span><span>Students</span><span>Professionals</span><span>Hobbyists</span><span>Everyone</span></div>
+    <p class="note">Discord invite URL can be dropped into <code>index.html</code> when ready.</p>
+  </article>
+  <blockquote class="card">“A place to build, break,<br>and learn together.”<small>— Home Lab Village</small></blockquote>
+</section>
+
+<section id="resources" class="resources">
+  <div class="kicker">RESOURCES</div>
+  <h2>Labs are better when you can take them home.</h2>
+  <p>Workshop guides, compose files, and community resources will live here as Home Lab Village grows.</p>
+</section>
+</main>
+
+<footer>
+  <div class="brand"><span class="logo">⌂<span>⚗</span></span><span><b>Home Lab Village</b><small>Build. Experiment. Learn. Together.</small></span></div>
+  <div>homelabvillage.org</div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
