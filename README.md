@@ -44,3 +44,11 @@ Discord invite: https://discord.gg/tCtT5bwjMw
 - Fixed oversized logo rendering in the header, hero, and footer.
 - Added hard dimensions plus CSS `!important` fallbacks.
 - Added `?v=5` stylesheet cache-busting so browsers load the updated CSS immediately.
+
+## V6 CTF page
+- Restored the Phase 1 presentation style: centered title + challenge image.
+- Removed the direct Phase2 download button and extra CTF cards/copy.
+- Added: "There are 3 phases. The last phase has the flag."
+- Added a click-to-reveal hint: "Try finding a way to download the image."
+- Phase2.jpg is displayed as a CSS background instead of a normal `<img>`, which removes the ordinary "Save image as..." / drag-download path while keeping the challenge solvable by inspecting the page/network.
+- Restored the full Home / About / Workshop / CTF / Resources / Community navigation on the CTF page.

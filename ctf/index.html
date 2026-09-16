@@ -4,65 +4,169 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#050b12">
-  <meta name="description" content="Home Lab Village beginner-friendly CTF challenge.">
+  <meta name="description" content="Home Lab Village CTF — Phase 1.">
   <title>CTF | Home Lab Village</title>
   <link rel="icon" type="image/png" href="../assets/favicon.png">
-  <link rel="stylesheet" href="../css/style.css?v=5">
+  <link rel="stylesheet" href="../css/style.css?v=6">
   <style>
-    .ctf-page{min-height:calc(100vh - 150px);padding:80px clamp(20px,8vw,120px);background:
-      radial-gradient(circle at 80% 20%,#38105f55,transparent 30%),
-      radial-gradient(circle at 15% 25%,#063e4e66,transparent 28%),#050b12}
-    .ctf-shell{max-width:980px;margin:auto}
-    .ctf-page h1{font-size:clamp(48px,7vw,86px);line-height:1;margin:.18em 0;
-      background:linear-gradient(90deg,#33e5f7,#f252de);-webkit-background-clip:text;color:transparent}
-    .ctf-page .lead{font-size:20px;color:#cbd6df;max-width:760px}
-    .challenge-box{margin-top:38px;padding:30px;border:1px solid #63337c;border-radius:12px;
-      background:linear-gradient(135deg,#0a0c1b,#081521)}
-    .challenge-box h2{margin-top:0;font-size:30px}
-    .download{margin-top:18px;background:#d84fe8;color:#100516}
-    .rules{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .rule{padding:18px;border:1px solid #17465c;border-radius:9px;background:#07111a}
-    .rule b{display:block;color:#45dff8;margin-bottom:5px}
-    .flag-format{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#36e6f5}
-    .back{display:inline-block;margin-top:32px;color:#5de7f8}
-    @media(max-width:700px){.rules{grid-template-columns:1fr}.ctf-page{padding-top:48px}}
+    .phase-page{
+      min-height:calc(100vh - 145px);
+      padding:72px 24px 88px;
+      background:
+        radial-gradient(circle at 78% 18%,rgba(79,32,154,.22),transparent 28%),
+        radial-gradient(circle at 18% 22%,rgba(0,210,230,.12),transparent 26%),
+        #050b12;
+    }
+    .phase-shell{
+      width:min(1050px,94vw);
+      margin:0 auto;
+      text-align:center;
+    }
+    .phase-shell h1{
+      margin:0;
+      font-size:clamp(48px,6vw,72px);
+      line-height:1;
+      letter-spacing:-1px;
+      color:#f1f6fb;
+    }
+    .phase-subtitle{
+      margin:18px auto 24px;
+      max-width:720px;
+      font-size:clamp(16px,2vw,19px);
+      color:#c6d2dc;
+    }
+    .phase-subtitle strong{
+      color:#57e8ff;
+      font-weight:700;
+    }
+    .challenge-image{
+      width:min(900px,92vw);
+      aspect-ratio:4 / 3;
+      margin:30px auto 22px;
+      background-image:url("Phase2.jpg");
+      background-size:contain;
+      background-position:center;
+      background-repeat:no-repeat;
+      user-select:none;
+      -webkit-user-select:none;
+      -webkit-touch-callout:none;
+    }
+    .hint-wrap{
+      margin-top:8px;
+    }
+    .hint-btn{
+      appearance:none;
+      border:1px solid #e45bd9;
+      background:rgba(19,10,31,.85);
+      color:#f277e8;
+      font:inherit;
+      font-weight:750;
+      border-radius:10px;
+      padding:11px 18px;
+      cursor:pointer;
+      transition:.18s ease;
+    }
+    .hint-btn:hover{
+      background:#e45bd9;
+      color:#16081a;
+      box-shadow:0 0 24px rgba(228,91,217,.18);
+    }
+    .hint{
+      margin:14px auto 0;
+      max-width:620px;
+      color:#7cecff;
+      opacity:0;
+      transform:translateY(-4px);
+      transition:.18s ease;
+      pointer-events:none;
+    }
+    .hint.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+    .phase-note{
+      margin:18px auto 0;
+      max-width:680px;
+      font-size:13px;
+      color:#748492;
+    }
+    @media(max-width:850px){
+      .phase-page{padding-top:52px}
+      .phase-shell h1{font-size:48px}
+    }
   </style>
 </head>
 <body>
 <header class="nav">
   <a class="brand" href="../" aria-label="Home Lab Village home">
-    <img class="site-logo" src="../assets/homelabvillage-logo.png" alt="Home Lab Village logo" style="width:40px;height:40px;max-width:40px;max-height:40px;object-fit:contain;">
+    <img class="site-logo" src="../assets/homelabvillage-logo.png" alt="Home Lab Village logo"
+      style="width:40px;height:40px;max-width:40px;max-height:40px;object-fit:contain;">
     <span>Home Lab Village</span>
   </a>
-  <a class="btn small discord" href="https://discord.gg/tCtT5bwjMw" target="_blank" rel="noopener noreferrer">Join Discord</a>
+
+  <button class="menu" aria-label="Toggle menu">☰</button>
+
+  <nav>
+    <a href="../">Home</a>
+    <a href="../#about">About</a>
+    <a href="../#workshop">Workshop</a>
+    <a class="active" href="./">CTF</a>
+    <a href="../#resources">Resources</a>
+    <a href="../#community">Community</a>
+  </nav>
+
+  <a class="btn small discord" href="https://discord.gg/tCtT5bwjMw"
+     target="_blank" rel="noopener noreferrer">Join Discord</a>
 </header>
 
-<main class="ctf-page">
-  <div class="ctf-shell">
-    <div class="eyebrow">HOME LAB VILLAGE • CTF</div>
-    <h1>Find the flag.</h1>
-    <p class="lead">A beginner-friendly challenge built to reward curiosity. Download the challenge image, inspect what you have, and follow the trail.</p>
+<main class="phase-page">
+  <section class="phase-shell">
+    <h1>Phase 1</h1>
+    <p class="phase-subtitle">
+      There are <strong>3 phases</strong>. The last phase has the flag.
+    </p>
 
-    <section class="challenge-box">
-      <div class="kicker pink-text">CHALLENGE FILE</div>
-      <h2>Phase 2</h2>
-      <p>Your goal is to recover a flag in the format <span class="flag-format">hlv{...}</span>. Everything you need is contained in or discoverable from the challenge.</p>
-      <a class="btn download" href="Phase2.jpg" download>Download Phase2.jpg →</a>
-    </section>
+    <div class="challenge-image"
+         role="img"
+         aria-label="Phase 1 challenge image"
+         oncontextmenu="return false;"
+         ondragstart="return false;"></div>
 
-    <div class="rules">
-      <div class="rule"><b>Look closely</b>Files often tell you more than what is visible on the surface.</div>
-      <div class="rule"><b>Use your tools</b>Standard forensic and password-auditing tools are fair game.</div>
-      <div class="rule"><b>Learn, don't guess</b>The challenge is intended to teach a repeatable workflow, not require blind luck.</div>
+    <div class="hint-wrap">
+      <button id="hintButton" class="hint-btn" type="button"
+              aria-expanded="false" aria-controls="phaseHint">
+        Show hint
+      </button>
+      <p id="phaseHint" class="hint" aria-live="polite">
+        Try finding a way to download the image.
+      </p>
     </div>
 
-    <a class="back" href="../">← Back to Home Lab Village</a>
-  </div>
+    <p class="phase-note">No direct download button this time. Good luck 👀</p>
+  </section>
 </main>
 
 <footer>
-  <div class="brand"><img class="site-logo" src="../assets/homelabvillage-logo.png" alt="Home Lab Village logo" style="width:40px;height:40px;max-width:40px;max-height:40px;object-fit:contain;"><span><b>Home Lab Village</b><small>Build. Experiment. Learn. Together.</small></span></div>
+  <div class="brand">
+    <img class="site-logo" src="../assets/homelabvillage-logo.png" alt="Home Lab Village logo"
+      style="width:40px;height:40px;max-width:40px;max-height:40px;object-fit:contain;">
+    <span><b>Home Lab Village</b><small>Build. Experiment. Learn. Together.</small></span>
+  </div>
   <div>homelabvillage.org</div>
 </footer>
+
+<script src="../js/main.js"></script>
+<script>
+  const hintButton = document.getElementById('hintButton');
+  const phaseHint = document.getElementById('phaseHint');
+
+  hintButton.addEventListener('click', () => {
+    const showing = phaseHint.classList.toggle('show');
+    hintButton.textContent = showing ? 'Hide hint' : 'Show hint';
+    hintButton.setAttribute('aria-expanded', showing ? 'true' : 'false');
+  });
+
+  document.querySelector('.challenge-image').addEventListener('contextmenu', e => e.preventDefault());
+</script>
 </body>
 </html>
