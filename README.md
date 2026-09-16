@@ -39,3 +39,8 @@ Discord invite: https://discord.gg/tCtT5bwjMw
 - Replaced the temporary text-symbol logo in the header/footer and hero terminal.
 - Added a favicon from the same logo.
 - V4 is a complete upload package including CNAME, CSS, JS, CTF page, and Phase2.jpg.
+
+## V5 fix
+- Fixed oversized logo rendering in the header, hero, and footer.
+- Added hard dimensions plus CSS `!important` fallbacks.
+- Added `?v=5` stylesheet cache-busting so browsers load the updated CSS immediately.

@@ -25,3 +25,44 @@ footer .site-logo{
   .site-logo{width:34px;height:34px}
   .hero-logo{width:78px;right:5%;top:18%}
 }
+
+
+/* V5 logo sizing hardening */
+.nav .site-logo,
+footer .site-logo{
+  width:40px !important;
+  height:40px !important;
+  max-width:40px !important;
+  max-height:40px !important;
+  object-fit:contain !important;
+  display:block !important;
+  flex:0 0 40px !important;
+}
+.hero-logo{
+  position:absolute !important;
+  right:7% !important;
+  top:22% !important;
+  width:110px !important;
+  height:auto !important;
+  max-width:110px !important;
+  max-height:110px !important;
+  object-fit:contain !important;
+}
+footer .brand{
+  align-items:center !important;
+}
+@media(max-width:850px){
+  .nav .site-logo,
+  footer .site-logo{
+    width:34px !important;
+    height:34px !important;
+    max-width:34px !important;
+    max-height:34px !important;
+    flex-basis:34px !important;
+  }
+  .hero-logo{
+    width:78px !important;
+    max-width:78px !important;
+    max-height:78px !important;
+  }
+}
