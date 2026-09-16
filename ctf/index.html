@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050b12">
+  <meta name="description" content="Home Lab Village beginner-friendly CTF challenge.">
+  <title>CTF | Home Lab Village</title>
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .ctf-page{min-height:calc(100vh - 150px);padding:80px clamp(20px,8vw,120px);background:
+      radial-gradient(circle at 80% 20%,#38105f55,transparent 30%),
+      radial-gradient(circle at 15% 25%,#063e4e66,transparent 28%),#050b12}
+    .ctf-shell{max-width:980px;margin:auto}
+    .ctf-page h1{font-size:clamp(48px,7vw,86px);line-height:1;margin:.18em 0;
+      background:linear-gradient(90deg,#33e5f7,#f252de);-webkit-background-clip:text;color:transparent}
+    .ctf-page .lead{font-size:20px;color:#cbd6df;max-width:760px}
+    .challenge-box{margin-top:38px;padding:30px;border:1px solid #63337c;border-radius:12px;
+      background:linear-gradient(135deg,#0a0c1b,#081521)}
+    .challenge-box h2{margin-top:0;font-size:30px}
+    .download{margin-top:18px;background:#d84fe8;color:#100516}
+    .rules{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .rule{padding:18px;border:1px solid #17465c;border-radius:9px;background:#07111a}
+    .rule b{display:block;color:#45dff8;margin-bottom:5px}
+    .flag-format{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#36e6f5}
+    .back{display:inline-block;margin-top:32px;color:#5de7f8}
+    @media(max-width:700px){.rules{grid-template-columns:1fr}.ctf-page{padding-top:48px}}
+  </style>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="../" aria-label="Home Lab Village home">
+    <img class="site-logo" src="../assets/homelabvillage-logo.png" alt="Home Lab Village logo">
+    <span>Home Lab Village</span>
+  </a>
+  <a class="btn small discord" href="https://discord.gg/tCtT5bwjMw" target="_blank" rel="noopener noreferrer">Join Discord</a>
+</header>
+
+<main class="ctf-page">
+  <div class="ctf-shell">
+    <div class="eyebrow">HOME LAB VILLAGE • CTF</div>
+    <h1>Find the flag.</h1>
+    <p class="lead">A beginner-friendly challenge built to reward curiosity. Download the challenge image, inspect what you have, and follow the trail.</p>
+
+    <section class="challenge-box">
+      <div class="kicker pink-text">CHALLENGE FILE</div>
+      <h2>Phase 2</h2>
+      <p>Your goal is to recover a flag in the format <span class="flag-format">hlv{...}</span>. Everything you need is contained in or discoverable from the challenge.</p>
+      <a class="btn download" href="Phase2.jpg" download>Download Phase2.jpg →</a>
+    </section>
+
+    <div class="rules">
+      <div class="rule"><b>Look closely</b>Files often tell you more than what is visible on the surface.</div>
+      <div class="rule"><b>Use your tools</b>Standard forensic and password-auditing tools are fair game.</div>
+      <div class="rule"><b>Learn, don't guess</b>The challenge is intended to teach a repeatable workflow, not require blind luck.</div>
+    </div>
+
+    <a class="back" href="../">← Back to Home Lab Village</a>
+  </div>
+</main>
+
+<footer>
+  <div class="brand"><img class="site-logo" src="../assets/homelabvillage-logo.png" alt="Home Lab Village logo"><span><b>Home Lab Village</b><small>Build. Experiment. Learn. Together.</small></span></div>
+  <div>homelabvillage.org</div>
+</footer>
+</body>
+</html>
