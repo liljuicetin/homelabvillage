@@ -52,3 +52,8 @@ Discord invite: https://discord.gg/tCtT5bwjMw
 - Added a click-to-reveal hint: "Try finding a way to download the image."
 - Phase2.jpg is displayed as a CSS background instead of a normal `<img>`, which removes the ordinary "Save image as..." / drag-download path while keeping the challenge solvable by inspecting the page/network.
 - Restored the full Home / About / Workshop / CTF / Resources / Community navigation on the CTF page.
+
+## V7 CTF styling tweaks
+- "Phase 1" is now cyan.
+- "3 phases" is now pink.
+- Bottom note now reads: "No direct download button. Good luck 👀"
