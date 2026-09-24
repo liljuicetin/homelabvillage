@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#050b12">
-  <meta name="description" content="Home Lab Village resources: workshop slides, guides, and project materials.">
+  <meta name="description" content="Home Lab Village resources: workshop guides, slides, and project materials.">
   <title>Resources | Home Lab Village</title>
   <link rel="icon" type="image/png" href="../assets/favicon.png">
   <link rel="stylesheet" href="../css/style.css?v=8">
-  <link rel="stylesheet" href="../css/resources-prereqs.css?v=3">
+  <link rel="stylesheet" href="../css/resources-prereqs.css?v=4">
 </head>
 <body>
 <header class="nav">
@@ -30,96 +30,34 @@
   <section class="resources-page-hero">
     <div class="kicker">HOME LAB VILLAGE LIBRARY</div>
     <h1>Resources</h1>
-    <p>Workshop slides, guides, and project materials you can come back to as your lab grows.</p>
+    <p>Workshop guides, slides, and project materials you can come back to as your lab grows.</p>
   </section>
 
   <section class="resources resources-page-library">
-    <article class="resource-card">
-      <div class="resource-copy">
-        <div class="resource-meta">SFISSA HACK THE FLAG 2026 • BEGINNER WORKSHOP</div>
-        <h3>Your First Cybersecurity Homelab</h3>
-        <p>Build a small cyber range, expose a real service, generate traffic, observe what changed, and connect the dots between self-hosting and security.</p>
-
-        <div class="resource-flow" aria-label="Workshop flow">
-          <span>Build</span><i>→</i><span>Observe</span><i>→</i><span>Attack</span><i>→</i><span>Analyze</span>
+    <div class="resource-index-grid">
+      <article class="resource-index-card">
+        <div class="resource-index-card-top">
+          <div class="resource-meta">SFISSA HACK THE FLAG 2026 • BEGINNER WORKSHOP</div>
+          <img src="../assets/homelabvillage-logo.png" alt="" aria-hidden="true">
         </div>
+
+        <h2>Your First Cybersecurity Homelab</h2>
+        <p>Build a small cyber range, deploy Pi-hole with Docker, generate traffic, and inspect what happens with Nmap, DNS, tcpdump, and HTTP.</p>
 
         <div class="resource-tags" aria-label="Workshop topics">
           <span>Docker</span><span>Pi-hole</span><span>Nmap</span><span>DNS</span><span>tcpdump</span><span>HTTP / HTTPS</span>
         </div>
-      </div>
 
-      <div class="resource-visual" aria-hidden="true">
-        <img src="../assets/homelabvillage-logo.png" alt="">
-        <div class="resource-visual-eyebrow">WORKSHOP SLIDES</div>
-        <strong>Your First<br>Cybersecurity Homelab</strong>
-        <small>SFISSA Hack the Flag 2026</small>
-      </div>
-
-      <div class="resource-prereqs">
-        <div class="resource-prereqs-title">Before you start: Ubuntu</div>
-        <p>The conference lab already had the required tools installed for attendees. If you're recreating the workshop on your own Ubuntu machine, install the prerequisites below first. This covers the tools used in the exercises, including Docker, Docker Compose, Nmap, tcpdump, <code>dig</code>, and <code>curl</code>.</p>
-        <pre><code>sudo apt update
-sudo apt install -y docker.io docker-compose-v2 nmap tcpdump dnsutils curl
-sudo systemctl enable --now docker
-sudo usermod -aG docker "$USER"</code></pre>
-
-        <div class="resource-prereqs-title">Refresh Docker permissions</div>
-        <p>Do this before continuing. Docker version commands can work even when your current shell still cannot access the Docker daemon.</p>
-        <pre><code>newgrp docker
-docker ps</code></pre>
-        <p class="resource-prereqs-note">Do not continue until <code>docker ps</code> works without <code>sudo</code>. If you prefer, log out and back in instead of running <code>newgrp docker</code>.</p>
-
-        <pre><code>docker --version
-docker compose version
-nmap --version
-tcpdump --version
-dig -v
-curl --version</code></pre>
-
-        <div class="resource-prereqs-title">Create the Pi-hole lab</div>
-        <p>The commands below create the Pi-hole Compose file used for the lab. They automatically detect your main network interface and timezone. The lab password is <code>homelabvillage</code>. Change it before using this outside a temporary lab.</p>
-        <pre><code>mkdir -p ~/labs/pihole
-cd ~/labs/pihole
-
-PIHOLE_IFACE=$(ip route show default | awk '/default/ {print $5; exit}')
-PIHOLE_TZ=$(timedatectl show -p Timezone --value)
-
-cat &gt; compose.yml &lt;&lt;EOF
-services:
-  pihole:
-    container_name: pihole
-    image: pihole/pihole:latest
-    network_mode: host
-
-    environment:
-      TZ: "$PIHOLE_TZ"
-      FTLCONF_webserver_api_password: "homelabvillage" # LAB PASSWORD - CHANGE THIS
-      FTLCONF_dns_upstreams: "1.1.1.1;9.9.9.9"
-      FTLCONF_dns_interface: "$PIHOLE_IFACE"
-      FTLCONF_dns_listeningMode: "BIND"
-
-    volumes:
-      - "./etc-pihole:/etc/pihole"
-
-    restart: unless-stopped
-EOF
-
-docker compose config
-docker compose up -d
-docker compose ps</code></pre>
-        <p class="resource-prereqs-note">For a permanent Pi-hole install, give the Ubuntu machine a static IP or DHCP reservation so its address does not change. Ubuntu may already use <code>systemd-resolved</code> on local port 53. This lab uses Pi-hole's <code>BIND</code> mode so Pi-hole can bind to the detected network interface without disabling Ubuntu's local resolver.</p>
-      </div>
-
-      <div class="resource-actions">
-        <a class="btn primary" href="../assets/resources/Home-Lab-Village-First-Homelab-Workshop-HTF-2026.pdf" target="_blank" rel="noopener noreferrer">View Presentation ↗</a>
-        <a class="btn outline" href="../assets/resources/Home-Lab-Village-First-Homelab-Workshop-HTF-2026.pdf" download>Download PDF ↓</a>
-      </div>
-    </article>
+        <div class="resource-index-actions">
+          <a class="btn primary" href="./htf-workshop-2026/">Open Resource →</a>
+          <a class="btn outline" href="../assets/resources/Home-Lab-Village-First-Homelab-Workshop-HTF-2026.pdf" target="_blank" rel="noopener noreferrer">View Slides ↗</a>
+        </div>
+      </article>
+    </div>
 
     <div class="resources-community">
       <div>
-        <strong>Building along and get stuck?</strong>
+        <strong>Have a resource idea?</strong>
         <p>Bring your lab, questions, and weird ideas to the Home Lab Village community.</p>
       </div>
       <a class="btn discord" href="https://discord.gg/tCtT5bwjMw" target="_blank" rel="noopener noreferrer">Join Discord →</a>
