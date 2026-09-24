@@ -208,3 +208,37 @@ footer .brand{
   .resources-community{align-items:stretch;flex-direction:column}
   .resources-community .btn{width:100%}
 }
+
+/* V7 dedicated resources page */
+.resource-page-main{
+  min-height:calc(100vh - 145px);
+  padding-bottom:18px;
+}
+.resources-page-hero{
+  padding:72px clamp(20px,5vw,76px) 38px;
+  background:radial-gradient(circle at 82% 18%,rgba(239,85,220,.14),transparent 24%),radial-gradient(circle at 68% 70%,rgba(46,228,255,.09),transparent 28%),linear-gradient(120deg,#071725,#050b12 66%);
+  border-bottom:1px solid #102535;
+}
+.resources-page-hero h1{
+  margin:10px 0 8px;
+  font-size:clamp(48px,7vw,76px);
+  line-height:1;
+  color:#35def7;
+}
+.resources-page-hero p{
+  margin:0;
+  max-width:720px;
+  color:#cbd6df;
+  font-size:18px;
+}
+.resources-page-library{
+  margin-top:26px;
+  margin-bottom:26px;
+}
+.resources-page-library .resource-card:first-child{
+  margin-top:0;
+}
+@media(max-width:850px){
+  .resources-page-hero{padding:48px 22px 30px}
+  .resources-page-hero h1{font-size:52px}
+}
