@@ -8,6 +8,7 @@
   <title>Resources | Home Lab Village</title>
   <link rel="icon" type="image/png" href="../assets/favicon.png">
   <link rel="stylesheet" href="../css/style.css?v=8">
+  <link rel="stylesheet" href="../css/resources-prereqs.css?v=1">
 </head>
 <body>
 <header class="nav">
@@ -45,6 +46,22 @@
 
         <div class="resource-tags" aria-label="Workshop topics">
           <span>Docker</span><span>Pi-hole</span><span>Nmap</span><span>DNS</span><span>tcpdump</span><span>HTTP / HTTPS</span>
+        </div>
+
+        <div class="resource-prereqs">
+          <div class="resource-prereqs-title">Before you start — Ubuntu</div>
+          <p>The conference lab already had the required tools installed for attendees. If you're recreating the workshop on your own Ubuntu machine, install the prerequisites below first. This covers the tools used in the exercises, including Docker, Docker Compose, Nmap, tcpdump, <code>dig</code>, and <code>curl</code>.</p>
+          <pre><code>sudo apt update
+sudo apt install -y docker.io docker-compose-v2 nmap tcpdump dnsutils curl
+sudo systemctl enable --now docker
+sudo usermod -aG docker "$USER"</code></pre>
+          <p class="resource-prereqs-note">After adding yourself to the Docker group, log out and back in (or run <code>newgrp docker</code>) before using Docker without <code>sudo</code>. You'll also need to create the workshop's <code>compose.yaml</code> configuration shown in the slides before starting the Pi-hole container.</p>
+          <pre><code>docker --version
+docker compose version
+nmap --version
+tcpdump --version
+dig -v
+curl --version</code></pre>
         </div>
 
         <div class="resource-actions">
