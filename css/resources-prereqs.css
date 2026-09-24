@@ -1,0 +1,42 @@
+.resource-prereqs{
+  margin-top:22px;
+  padding:20px;
+  border:1px solid #38506a;
+  border-left:4px solid #2fe1f7;
+  border-radius:10px;
+  background:#070f18;
+}
+.resource-prereqs-title{
+  margin-bottom:7px;
+  color:#64eaff;
+  font-weight:850;
+  font-size:15px;
+  letter-spacing:.4px;
+}
+.resource-prereqs p{
+  margin:0 0 14px !important;
+  max-width:none !important;
+  font-size:14px !important;
+  line-height:1.6;
+}
+.resource-prereqs code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+.resource-prereqs pre{
+  margin:12px 0 14px;
+  padding:16px;
+  overflow-x:auto;
+  border:1px solid #193649;
+  border-radius:8px;
+  background:#02080d;
+  color:#7fffe3;
+  font-size:13px;
+  line-height:1.55;
+}
+.resource-prereqs-note{
+  color:#aebdca !important;
+}
+@media(max-width:850px){
+  .resource-prereqs{padding:16px}
+  .resource-prereqs pre{font-size:12px}
+}
