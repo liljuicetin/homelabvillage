@@ -55,7 +55,13 @@
 sudo apt install -y docker.io docker-compose-v2 nmap tcpdump dnsutils curl
 sudo systemctl enable --now docker
 sudo usermod -aG docker "$USER"</code></pre>
-          <p class="resource-prereqs-note">After adding yourself to the Docker group, log out and back in or run <code>newgrp docker</code> before using Docker without <code>sudo</code>.</p>
+
+          <div class="resource-prereqs-title">Refresh Docker permissions</div>
+          <p>Do this before continuing. Docker version commands can work even when your current shell still cannot access the Docker daemon.</p>
+          <pre><code>newgrp docker
+docker ps</code></pre>
+          <p class="resource-prereqs-note">Do not continue until <code>docker ps</code> works without <code>sudo</code>. If you prefer, log out and back in instead of running <code>newgrp docker</code>.</p>
+
           <pre><code>docker --version
 docker compose version
 nmap --version
