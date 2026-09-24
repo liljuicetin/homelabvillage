@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050b12">
+  <meta name="description" content="About Home Lab Village — a volunteer-run community for learning, sharing projects, and building hands-on cybersecurity experience together.">
+  <title>About | Home Lab Village</title>
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="stylesheet" href="../css/style.css?v=8">
+  <style>
+    .about-page-main{
+      min-height:calc(100vh - 145px);
+      padding-bottom:34px;
+    }
+    .about-page-content{
+      width:min(900px,calc(100% - 40px));
+      margin:30px auto 0;
+      padding:34px;
+      border:1px solid #173d50;
+      border-radius:14px;
+      background:radial-gradient(circle at 92% 10%,rgba(239,85,220,.08),transparent 24%),linear-gradient(135deg,#08131e,#071019);
+      box-shadow:0 18px 55px rgba(0,0,0,.2);
+    }
+    .about-page-content p{
+      margin:0 0 22px;
+      color:#cbd6df;
+      font-size:18px;
+      line-height:1.75;
+    }
+    .about-page-content p:last-of-type{
+      margin-bottom:20px;
+    }
+    .about-email{
+      font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    }
+    @media(max-width:850px){
+      .about-page-content{
+        width:calc(100% - 32px);
+        padding:24px 20px;
+      }
+      .about-page-content p{
+        font-size:16px;
+      }
+      .about-email{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="../" aria-label="Home Lab Village home">
+    <img class="site-logo" src="../assets/homelabvillage-logo.png" alt="Home Lab Village logo" style="width:40px;height:40px;max-width:40px;max-height:40px;object-fit:contain;">
+    <span>Home Lab Village</span>
+  </a>
+  <button class="menu" aria-label="Toggle menu">☰</button>
+  <nav>
+    <a href="../">Home</a>
+    <a class="active" href="./">About</a>
+    <a href="../ctf/">CTF</a>
+    <a href="../resources/">Resources</a>
+  </nav>
+  <a class="btn small discord" href="https://discord.gg/tCtT5bwjMw" target="_blank" rel="noopener noreferrer">Join Discord</a>
+</header>
+
+<main class="about-page-main">
+  <section class="resources-page-hero">
+    <div class="kicker">ABOUT HOME LAB VILLAGE</div>
+    <h1>About</h1>
+    <p>A place to share projects, collaborate, and learn together.</p>
+  </section>
+
+  <section class="about-page-content">
+    <p>We're always told that the best way to get hands on cybersecurity experience is with our own home lab, but the home lab rabbit hole can be scary for those unfamiliar with it. That is why I started this community, to give people a place to share any projects they are working on, collaborate, and learn together.</p>
+
+    <p>In this community, it doesn't matter whether you are an advanced Proxmox user, just starting in homelabbing on a Raspberry Pi, or have never touched a terminal, all are welcome here.</p>
+
+    <p>The Home Lab Village is a volunteer-run community, and we're always happy to have like-minded individuals join our team to help build this community. If you're interested in volunteering, contributing to a project, helping at an event, or getting more involved, feel free to reach out at</p>
+
+    <a class="btn outline about-email" href="mailto:liljuicetin@liljuicetin.org">liljuicetin@liljuicetin.org</a>
+  </section>
+</main>
+
+<footer>
+  <div class="brand"><img class="site-logo" src="../assets/homelabvillage-logo.png" alt="Home Lab Village logo" style="width:40px;height:40px;max-width:40px;max-height:40px;object-fit:contain;"><span><b>Home Lab Village</b><small>Build. Experiment. Learn. Together.</small></span></div>
+  <div>homelabvillage.org</div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>
