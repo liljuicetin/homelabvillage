@@ -36,7 +36,17 @@
 .resource-prereqs-note{
   color:#aebdca !important;
 }
+.resource-card > .resource-prereqs,
+.resource-card > .resource-actions{
+  grid-column:1 / -1;
+  margin-top:0;
+}
+.resource-card > .resource-visual{
+  align-self:start;
+  min-height:240px;
+}
 @media(max-width:850px){
   .resource-prereqs{padding:16px}
   .resource-prereqs pre{font-size:12px}
+  .resource-card > .resource-visual{min-height:220px}
 }
