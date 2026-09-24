@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#050b12">
-  <meta name="description" content="Home Lab Village resources — workshop slides, guides, and project materials.">
+  <meta name="description" content="Home Lab Village resources: workshop slides, guides, and project materials.">
   <title>Resources | Home Lab Village</title>
   <link rel="icon" type="image/png" href="../assets/favicon.png">
   <link rel="stylesheet" href="../css/style.css?v=8">
@@ -49,19 +49,52 @@
         </div>
 
         <div class="resource-prereqs">
-          <div class="resource-prereqs-title">Before you start — Ubuntu</div>
+          <div class="resource-prereqs-title">Before you start: Ubuntu</div>
           <p>The conference lab already had the required tools installed for attendees. If you're recreating the workshop on your own Ubuntu machine, install the prerequisites below first. This covers the tools used in the exercises, including Docker, Docker Compose, Nmap, tcpdump, <code>dig</code>, and <code>curl</code>.</p>
           <pre><code>sudo apt update
 sudo apt install -y docker.io docker-compose-v2 nmap tcpdump dnsutils curl
 sudo systemctl enable --now docker
 sudo usermod -aG docker "$USER"</code></pre>
-          <p class="resource-prereqs-note">After adding yourself to the Docker group, log out and back in (or run <code>newgrp docker</code>) before using Docker without <code>sudo</code>. You'll also need to create the workshop's <code>compose.yaml</code> configuration shown in the slides before starting the Pi-hole container.</p>
+          <p class="resource-prereqs-note">After adding yourself to the Docker group, log out and back in or run <code>newgrp docker</code> before using Docker without <code>sudo</code>.</p>
           <pre><code>docker --version
 docker compose version
 nmap --version
 tcpdump --version
 dig -v
 curl --version</code></pre>
+
+          <div class="resource-prereqs-title">Create the Pi-hole lab</div>
+          <p>The commands below create the Pi-hole Compose file used for the lab. They automatically detect your main network interface and timezone. The lab password is <code>homelabvillage</code>. Change it before using this outside a temporary lab.</p>
+          <pre><code>mkdir -p ~/labs/pihole
+cd ~/labs/pihole
+
+PIHOLE_IFACE=$(ip route show default | awk '/default/ {print $5; exit}')
+PIHOLE_TZ=$(timedatectl show -p Timezone --value)
+
+cat &gt; compose.yml &lt;&lt;EOF
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    network_mode: host
+
+    environment:
+      TZ: "$PIHOLE_TZ"
+      FTLCONF_webserver_api_password: "homelabvillage" # LAB PASSWORD - CHANGE THIS
+      FTLCONF_dns_upstreams: "1.1.1.1;9.9.9.9"
+      FTLCONF_dns_interface: "$PIHOLE_IFACE"
+      FTLCONF_dns_listeningMode: "BIND"
+
+    volumes:
+      - "./etc-pihole:/etc/pihole"
+
+    restart: unless-stopped
+EOF
+
+docker compose config
+docker compose up -d
+docker compose ps</code></pre>
+          <p class="resource-prereqs-note">For a permanent Pi-hole install, give the Ubuntu machine a static IP or DHCP reservation so its address does not change. Ubuntu may already use <code>systemd-resolved</code> on local port 53. This lab uses Pi-hole's <code>BIND</code> mode so Pi-hole can bind to the detected network interface without disabling Ubuntu's local resolver.</p>
         </div>
 
         <div class="resource-actions">
