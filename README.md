@@ -57,3 +57,9 @@ Discord invite: https://discord.gg/tCtT5bwjMw
 - "Phase 1" is now cyan.
 - "3 phases" is now pink.
 - Bottom note now reads: "No direct download button. Good luck 👀"
+
+## V9 animated redesign
+- Reworked the shared visual system with layered glass panels, neon gradients, responsive spacing, and a more dimensional hero.
+- Added ambient light movement, animated terminal details, button effects, scroll reveals, and pointer-responsive cards.
+- Added a reduced-motion mode so the site remains comfortable and usable when operating-system motion reduction is enabled.
+- Refined the mobile navigation and preserved the existing page copy, links, and CTF behavior.

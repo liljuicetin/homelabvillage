@@ -4,167 +4,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#050b12">
-  <meta name="description" content="Home Lab Village CTF — Phase 1.">
+  <meta name="description" content="Home Lab Village CTF Phase 1.">
   <title>CTF | Home Lab Village</title>
   <link rel="icon" type="image/png" href="../assets/favicon.png">
-  <link rel="stylesheet" href="../css/style.css?v=8">
-  <style>
-    .phase-page{
-      min-height:calc(100vh - 145px);
-      padding:72px 24px 88px;
-      background:
-        radial-gradient(circle at 78% 18%,rgba(79,32,154,.22),transparent 28%),
-        radial-gradient(circle at 18% 22%,rgba(0,210,230,.12),transparent 26%),
-        #050b12;
-    }
-    .phase-shell{
-      width:min(1050px,94vw);
-      margin:0 auto;
-      text-align:center;
-    }
-    .phase-shell h1{
-      margin:0;
-      font-size:clamp(48px,6vw,72px);
-      line-height:1;
-      letter-spacing:-1px;
-      color:#35def7;
-    }
-    .phase-subtitle{
-      margin:18px auto 24px;
-      max-width:720px;
-      font-size:clamp(16px,2vw,19px);
-      color:#c6d2dc;
-    }
-    .phase-subtitle strong{
-      color:#ef55dc;
-      font-weight:700;
-    }
-    .challenge-image{
-      width:min(900px,92vw);
-      aspect-ratio:4 / 3;
-      margin:30px auto 22px;
-      background-image:url("Phase2.jpg");
-      background-size:contain;
-      background-position:center;
-      background-repeat:no-repeat;
-      user-select:none;
-      -webkit-user-select:none;
-      -webkit-touch-callout:none;
-    }
-    .hint-wrap{
-      margin-top:8px;
-    }
-    .hint-btn{
-      appearance:none;
-      border:1px solid #e45bd9;
-      background:rgba(19,10,31,.85);
-      color:#f277e8;
-      font:inherit;
-      font-weight:750;
-      border-radius:10px;
-      padding:11px 18px;
-      cursor:pointer;
-      transition:.18s ease;
-    }
-    .hint-btn:hover{
-      background:#e45bd9;
-      color:#16081a;
-      box-shadow:0 0 24px rgba(228,91,217,.18);
-    }
-    .hint{
-      margin:14px auto 0;
-      max-width:620px;
-      color:#7cecff;
-      opacity:0;
-      transform:translateY(-4px);
-      transition:.18s ease;
-      pointer-events:none;
-    }
-    .hint.show{
-      opacity:1;
-      transform:translateY(0);
-    }
-    .phase-note{
-      margin:18px auto 0;
-      max-width:680px;
-      font-size:13px;
-      color:#748492;
-    }
-    @media(max-width:850px){
-      .phase-page{padding-top:52px}
-      .phase-shell h1{font-size:48px}
-    }
-  </style>
+  <link rel="stylesheet" href="../css/style.css?v=10">
 </head>
 <body>
 <header class="nav">
-  <a class="brand" href="../" aria-label="Home Lab Village home">
-    <img class="site-logo" src="../assets/homelabvillage-logo.png" alt="Home Lab Village logo"
-      style="width:40px;height:40px;max-width:40px;max-height:40px;object-fit:contain;">
-    <span>Home Lab Village</span>
-  </a>
-
-  <button class="menu" aria-label="Toggle menu">☰</button>
-
-  <nav>
-    <a href="../">Home</a>
-    <a href="../about/">About</a>
-    <a class="active" href="./">CTF</a>
-    <a href="../resources/">Resources</a>
-  </nav>
-
-  <a class="btn small discord" href="https://discord.gg/tCtT5bwjMw"
-     target="_blank" rel="noopener noreferrer">Join Discord</a>
+  <a class="brand" href="../index.html" aria-label="Home Lab Village home"><img class="site-logo" src="../assets/homelabvillage-logo-transparent.png" alt=""><span>Home Lab <b>Village</b></span></a>
+  <button class="menu" type="button" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  <nav aria-label="Primary navigation"><a href="../index.html">Home</a><a href="../about/index.html">About</a><a class="active" href="index.html">CTF</a><a href="../resources/index.html">Resources</a></nav>
+  <a class="btn small discord" href="https://discord.gg/tCtT5bwjMw" target="_blank" rel="noopener noreferrer">Join Discord</a>
 </header>
-
-<main class="phase-page">
-  <section class="phase-shell">
-    <h1>Phase 1</h1>
-    <p class="phase-subtitle">
-      There are <strong>3 phases</strong>. The last phase has the flag.
-    </p>
-
-    <div class="challenge-image"
-         role="img"
-         aria-label="Phase 1 challenge image"
-         oncontextmenu="return false;"
-         ondragstart="return false;"></div>
-
-    <div class="hint-wrap">
-      <button id="hintButton" class="hint-btn" type="button"
-              aria-expanded="false" aria-controls="phaseHint">
-        Show hint
-      </button>
-      <p id="phaseHint" class="hint" aria-live="polite">
-        Try finding a way to download the image.
-      </p>
-    </div>
-
-    <p class="phase-note">Good luck 👀</p>
-  </section>
+<main id="main" class="phase-page">
+  <section class="phase-shell reveal"><div class="kicker">CAPTURE THE FLAG / 01</div><h1>Phase 1</h1><p class="phase-subtitle">There are <strong>3 phases</strong>. The last phase has the flag.</p><div class="challenge-frame"><div class="classified-label">CLASSIFIED // PHASE_01</div><div class="challenge-image" role="img" aria-label="Phase 1 challenge image" oncontextmenu="return false" ondragstart="return false"></div></div><button id="hintButton" class="hint-btn" type="button" aria-expanded="false" aria-controls="phaseHint">Reveal hint</button><p id="phaseHint" class="hint" aria-live="polite">Try finding a way to download the image.</p></section>
 </main>
-
-<footer>
-  <div class="brand">
-    <img class="site-logo" src="../assets/homelabvillage-logo.png" alt="Home Lab Village logo"
-      style="width:40px;height:40px;max-width:40px;max-height:40px;object-fit:contain;">
-    <span><b>Home Lab Village</b><small>Build. Experiment. Learn. Together.</small></span>
-  </div>
-  <div>homelabvillage.org</div>
-</footer>
-
-<script src="../js/main.js"></script>
+<footer><a class="brand" href="../index.html"><img class="site-logo" src="../assets/homelabvillage-logo-transparent.png" alt=""><span>Home Lab <b>Village</b></span></a><p>Build. Break. Learn. Together.</p><div class="footer-links"><a href="../about/index.html">About</a><a href="../resources/index.html">Resources</a></div></footer>
+<script src="../js/main.js?v=10"></script>
 <script>
-  const hintButton = document.getElementById('hintButton');
-  const phaseHint = document.getElementById('phaseHint');
-
-  hintButton.addEventListener('click', () => {
-    const showing = phaseHint.classList.toggle('show');
-    hintButton.textContent = showing ? 'Hide hint' : 'Show hint';
-    hintButton.setAttribute('aria-expanded', showing ? 'true' : 'false');
-  });
-
-  document.querySelector('.challenge-image').addEventListener('contextmenu', e => e.preventDefault());
+const hintButton = document.getElementById('hintButton');
+const phaseHint = document.getElementById('phaseHint');
+hintButton.addEventListener('click', () => {
+  const open = phaseHint.classList.toggle('show');
+  hintButton.textContent = open ? 'Hide hint' : 'Reveal hint';
+  hintButton.setAttribute('aria-expanded', String(open));
+});
 </script>
 </body>
 </html>

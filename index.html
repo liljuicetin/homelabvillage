@@ -7,7 +7,7 @@
   <meta name="description" content="Home Lab Village — build, interact, observe, attack, analyze, and learn together.">
   <title>Home Lab Village</title>
   <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="stylesheet" href="css/style.css?v=8">
+  <link rel="stylesheet" href="css/style.css?v=9">
 </head>
 <body>
 <header class="nav">
@@ -18,9 +18,9 @@
   <button class="menu" aria-label="Toggle menu">☰</button>
   <nav>
     <a class="active" href="./">Home</a>
-    <a href="about/">About</a>
-    <a href="ctf/">CTF</a>
-    <a href="resources/">Resources</a>
+    <a href="about/index.html">About</a>
+    <a href="ctf/index.html">CTF</a>
+    <a href="resources/index.html">Resources</a>
   </nav>
   <a class="btn small discord" href="https://discord.gg/tCtT5bwjMw" target="_blank" rel="noopener noreferrer">Join Discord</a>
 </header>
@@ -38,7 +38,10 @@
   </div>
   <div class="lab-scene" aria-label="Stylized homelab terminal">
     <div class="glow"></div>
+      <span class="terminal-orbit orbit orbit-one"></span>
+      <span class="terminal-orbit orbit orbit-two"></span>
     <div class="monitor">
+      <div class="monitor-chrome" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
       <div class="terminal">
         <span>$ whoami</span><br>
         <b>home_labber</b><br><br>
@@ -50,6 +53,7 @@
       </div>
       <img class="hero-logo" src="assets/homelabvillage-logo.png" alt="" aria-hidden="true" style="width:110px;max-width:110px;height:auto;object-fit:contain;">
     </div>
+    <div class="hero-node hero-node-bottom"><small>02</small><strong>Proxmox</strong><span>Virtualization</span></div>
     <div class="rack"><i></i><i></i><i></i></div>
     <div class="poster">Build<br>Break<br>Learn</div>
   </div>
@@ -68,7 +72,7 @@
     <div class="kicker pink-text">CTF CHALLENGE</div>
     <h2>Think you can find the flag?</h2>
     <p>Check out our beginner-friendly CTF. Use your OSINT, forensics, and problem-solving skills to see if you can complete the challenge.</p>
-    <a class="btn pink-btn" href="ctf/">Go to CTF →</a>
+    <a class="btn pink-btn" href="ctf/index.html">Go to CTF →</a>
     <div class="flag">⚑</div>
     <code>hlv{....}</code>
   </article>
@@ -78,7 +82,7 @@
     <h3>Chili Cookoff</h3>
     <p class="date">▣ &nbsp; September 18–19, 2026</p>
     <p>Home Lab Village made its debut at SFISSA's Hack the Flag Chili Cookoff with a beginner-friendly cybersecurity homelab workshop, and our team also participated in the advanced CTF and placed 3rd.</p>
-    <a class="btn event-btn" href="resources/">View Workshop Resources →</a>
+    <a class="btn event-btn" href="resources/index.html">View Workshop Resources →</a>
   </article>
 </section>
 

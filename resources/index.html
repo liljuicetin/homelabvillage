@@ -4,70 +4,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#050b12">
-  <meta name="description" content="Home Lab Village resources: workshop guides, slides, and project materials.">
+  <meta name="description" content="Home Lab Village workshop guides, slides, and project materials.">
   <title>Resources | Home Lab Village</title>
   <link rel="icon" type="image/png" href="../assets/favicon.png">
-  <link rel="stylesheet" href="../css/style.css?v=8">
+  <link rel="stylesheet" href="../css/style.css?v=10">
   <link rel="stylesheet" href="../css/resources-prereqs.css?v=5">
 </head>
 <body>
 <header class="nav">
-  <a class="brand" href="../" aria-label="Home Lab Village home">
-    <img class="site-logo" src="../assets/homelabvillage-logo.png" alt="Home Lab Village logo" style="width:40px;height:40px;max-width:40px;max-height:40px;object-fit:contain;">
-    <span>Home Lab Village</span>
-  </a>
-  <button class="menu" aria-label="Toggle menu">☰</button>
-  <nav>
-    <a href="../">Home</a>
-    <a href="../about/">About</a>
-    <a href="../ctf/">CTF</a>
-    <a class="active" href="./">Resources</a>
-  </nav>
+  <a class="brand" href="../index.html" aria-label="Home Lab Village home"><img class="site-logo" src="../assets/homelabvillage-logo-transparent.png" alt=""><span>Home Lab <b>Village</b></span></a>
+  <button class="menu" type="button" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  <nav aria-label="Primary navigation"><a href="../index.html">Home</a><a href="../about/index.html">About</a><a href="../ctf/index.html">CTF</a><a class="active" href="index.html">Resources</a></nav>
   <a class="btn small discord" href="https://discord.gg/tCtT5bwjMw" target="_blank" rel="noopener noreferrer">Join Discord</a>
 </header>
-
-<main class="resource-page-main">
-  <section class="resources-page-hero">
-    <div class="kicker">HOME LAB VILLAGE LIBRARY</div>
-    <h1>Resources</h1>
-    <p>Workshop guides, slides, and project materials you can come back to as your lab grows.</p>
-  </section>
-
-  <section class="resources resources-page-library">
-    <div class="resource-index-grid">
-      <article class="resource-index-card">
-        <div class="resource-index-card-top">
-          <div class="resource-meta">SFISSA HACK THE FLAG 2026 • BEGINNER WORKSHOP</div>
-          <img src="../assets/homelabvillage-logo.png" alt="" aria-hidden="true">
-        </div>
-
-        <h2>Your First Cybersecurity Homelab</h2>
-        <p>Build a small cyber range, deploy Pi-hole with Docker, generate traffic, and inspect what happens with Nmap, DNS, tcpdump, and HTTP.</p>
-
-        <div class="resource-tags" aria-label="Workshop topics">
-          <span>Docker</span><span>Pi-hole</span><span>Nmap</span><span>DNS</span><span>tcpdump</span><span>HTTP / HTTPS</span>
-        </div>
-
-        <div class="resource-index-actions">
-          <a class="btn primary" href="./htf-workshop-2026/">Open Resource →</a>
-        </div>
-      </article>
-    </div>
-
-    <div class="resources-community">
-      <div>
-        <strong>Have a resource idea?</strong>
-        <p>Bring your lab, questions, and weird ideas to the Home Lab Village community.</p>
-      </div>
-      <a class="btn discord" href="https://discord.gg/tCtT5bwjMw" target="_blank" rel="noopener noreferrer">Join Discord →</a>
-    </div>
+<main id="main">
+  <section class="page-hero resources-page-hero reveal"><div class="kicker">THE LIBRARY</div><h1>Learn by doing.</h1><p>Workshop guides, slides, and project materials to help you build the next thing in your lab.</p></section>
+  <section class="page-content reveal">
+    <div class="resource-index-grid"><article class="resource-index-card"><div class="resource-index-card-top"><div class="resource-meta">SFISSA HACK THE FLAG 2026 · BEGINNER WORKSHOP</div><img src="../assets/homelabvillage-logo-transparent.png" alt=""></div><h2>Your First Cybersecurity Homelab</h2><p>Build a small cyber range, deploy Pi-hole with Docker, generate traffic, and inspect what happens with Nmap, DNS, tcpdump, and HTTP.</p><div class="resource-tags" aria-label="Workshop topics"><span>Docker</span><span>Pi-hole</span><span>Nmap</span><span>DNS</span><span>tcpdump</span><span>HTTP / HTTPS</span></div><div class="resource-index-actions"><a class="btn primary" href="htf-workshop-2026/index.html">Open resource</a></div></article></div>
+    <div class="resources-community"><div><strong>Have a resource idea?</strong><p>Bring your lab, questions, and weird ideas to the community.</p></div><a class="btn discord" href="https://discord.gg/tCtT5bwjMw" target="_blank" rel="noopener noreferrer">Join Discord</a></div>
   </section>
 </main>
-
-<footer>
-  <div class="brand"><img class="site-logo" src="../assets/homelabvillage-logo.png" alt="Home Lab Village logo" style="width:40px;height:40px;max-width:40px;max-height:40px;object-fit:contain;"><span><b>Home Lab Village</b><small>Build. Experiment. Learn. Together.</small></span></div>
-  <div>homelabvillage.org</div>
-</footer>
-<script src="../js/main.js"></script>
+<footer><a class="brand" href="../index.html"><img class="site-logo" src="../assets/homelabvillage-logo-transparent.png" alt=""><span>Home Lab <b>Village</b></span></a><p>Build. Break. Learn. Together.</p><div class="footer-links"><a href="../about/index.html">About</a><a href="../ctf/index.html">CTF</a></div></footer>
+<script src="../js/main.js?v=10"></script>
 </body>
 </html>
