@@ -32,7 +32,7 @@ if (!reduceMotion) {
   }, { passive: true });
 
   const revealTargets = document.querySelectorAll(
-    ".flow article, .cards > *, .lower > *, .resources-page-hero > *, .resources-page-library > *, .about-page-content > *"
+    ".flow article, .tinkerer > *, .cards > *, .lower > *, .resources-page-hero > *, .resources-page-library > *, .about-page-content > *"
   );
   revealTargets.forEach((element, index) => {
     element.classList.add("reveal-ready");
