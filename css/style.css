@@ -909,3 +909,13 @@ body{
   .tinkerer-facts>div{flex-direction:column;gap:2px}
   .tinkerer-facts dd{text-align:left}
 }
+
+/* Tinkerer Tuesdays nav layout */
+#tinkerer-tuesdays{scroll-margin-top:100px}
+@media (min-width:851px) and (max-width:1100px){
+  .nav{gap:12px;padding-inline:20px}
+  .nav .brand{font-size:16px}
+  .nav nav{gap:2px}
+  .nav nav a{padding:8px 9px;font-size:13px}
+  .nav>.discord{padding:9px 11px;font-size:13px}
+}
